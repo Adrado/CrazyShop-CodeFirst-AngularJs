@@ -2,11 +2,6 @@
 
 app.config(function ($routeProvider, $locationProvider)
 {
-    $routeProvider.when('/users',
-    {
-        template: '<users></users>'
-        });
-
     $routeProvider.when('/employees',
         {
             template: '<employees></employees>'

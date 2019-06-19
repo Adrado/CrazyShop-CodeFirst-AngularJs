@@ -10,7 +10,7 @@
         }
         else
         {
-            this.ProductName = "";
+            this.Name = "";
             this.Price = 0;
         }
     }
