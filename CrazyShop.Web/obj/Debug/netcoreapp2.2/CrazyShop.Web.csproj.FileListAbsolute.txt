@@ -1,0 +1,11 @@
+C:\Dev\CrazyShop\CrazyShop\CrazyShop.Web\bin\Debug\netcoreapp2.2\CrazyShop.Web.deps.json
+C:\Dev\CrazyShop\CrazyShop\CrazyShop.Web\bin\Debug\netcoreapp2.2\CrazyShop.Web.runtimeconfig.json
+C:\Dev\CrazyShop\CrazyShop\CrazyShop.Web\bin\Debug\netcoreapp2.2\CrazyShop.Web.runtimeconfig.dev.json
+C:\Dev\CrazyShop\CrazyShop\CrazyShop.Web\bin\Debug\netcoreapp2.2\CrazyShop.Web.dll
+C:\Dev\CrazyShop\CrazyShop\CrazyShop.Web\obj\Debug\netcoreapp2.2\CrazyShop.Web.csprojAssemblyReference.cache
+C:\Dev\CrazyShop\CrazyShop\CrazyShop.Web\obj\Debug\netcoreapp2.2\CrazyShop.Web.csproj.CoreCompileInputs.cache
+C:\Dev\CrazyShop\CrazyShop\CrazyShop.Web\obj\Debug\netcoreapp2.2\CrazyShop.Web.RazorAssemblyInfo.cache
+C:\Dev\CrazyShop\CrazyShop\CrazyShop.Web\obj\Debug\netcoreapp2.2\CrazyShop.Web.RazorAssemblyInfo.cs
+C:\Dev\CrazyShop\CrazyShop\CrazyShop.Web\obj\Debug\netcoreapp2.2\CrazyShop.Web.AssemblyInfoInputs.cache
+C:\Dev\CrazyShop\CrazyShop\CrazyShop.Web\obj\Debug\netcoreapp2.2\CrazyShop.Web.AssemblyInfo.cs
+C:\Dev\CrazyShop\CrazyShop\CrazyShop.Web\obj\Debug\netcoreapp2.2\CrazyShop.Web.RazorTargetAssemblyInfo.cache

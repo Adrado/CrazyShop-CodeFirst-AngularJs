@@ -1,0 +1,6 @@
+C:\Dev\CrazyShop\CrazyShop\CrazyShop.Lib.DAL\bin\Debug\netstandard2.0\CrazyShop.Lib.DAL.deps.json
+C:\Dev\CrazyShop\CrazyShop\CrazyShop.Lib.DAL\bin\Debug\netstandard2.0\CrazyShop.Lib.DAL.dll
+C:\Dev\CrazyShop\CrazyShop\CrazyShop.Lib.DAL\obj\Debug\netstandard2.0\CrazyShop.Lib.DAL.csprojAssemblyReference.cache
+C:\Dev\CrazyShop\CrazyShop\CrazyShop.Lib.DAL\obj\Debug\netstandard2.0\CrazyShop.Lib.DAL.csproj.CoreCompileInputs.cache
+C:\Dev\CrazyShop\CrazyShop\CrazyShop.Lib.DAL\obj\Debug\netstandard2.0\CrazyShop.Lib.DAL.AssemblyInfoInputs.cache
+C:\Dev\CrazyShop\CrazyShop\CrazyShop.Lib.DAL\obj\Debug\netstandard2.0\CrazyShop.Lib.DAL.AssemblyInfo.cs
