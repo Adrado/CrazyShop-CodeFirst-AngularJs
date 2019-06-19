@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CrazyShop.Lib.DAL;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -24,6 +26,13 @@ namespace CrazyShop.Web
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            var connectionString = @"Data Source=E409W10O13\sqlexpress;Initial Catalog=CrazyShop;Integrated Security=True";
+
+            // Register DbContext class
+            services.AddDbContext<CrazyShopDbContext>(options =>
+                options.UseSqlServer(connectionString,
+                b => b.MigrationsAssembly(typeof(Startup).Assembly.FullName)));
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 
@@ -36,6 +45,8 @@ namespace CrazyShop.Web
             }
 
             app.UseMvc();
+            app.UseStaticFiles();
+            app.UseDefaultFiles();
         }
     }
 }

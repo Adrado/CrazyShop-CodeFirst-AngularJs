@@ -2859,7 +2859,7 @@
           "build/netstandard2.0/NETStandard.Library.targets": {}
         }
       },
-      "Newtonsoft.Json/11.0.2": {
+      "Newtonsoft.Json/12.0.2": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
@@ -4719,6 +4719,34 @@
         },
         "runtime": {
           "lib/netstandard1.3/System.Xml.XPath.XDocument.dll": {}
+        }
+      },
+      "CrazyShop.Lib/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.2.3",
+          "Newtonsoft.Json": "12.0.2"
+        },
+        "compile": {
+          "bin/placeholder/CrazyShop.Lib.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CrazyShop.Lib.dll": {}
+        }
+      },
+      "CrazyShop.Lib.DAL/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "CrazyShop.Lib": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "2.2.4"
+        },
+        "compile": {
+          "bin/placeholder/CrazyShop.Lib.DAL.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CrazyShop.Lib.DAL.dll": {}
         }
       }
     }
@@ -8039,10 +8067,10 @@
         "netstandard.library.nuspec"
       ]
     },
-    "Newtonsoft.Json/11.0.2": {
-      "sha512": "IvJe1pj7JHEsP8B8J8DwlMEx8UInrs/x+9oVY+oCD13jpLu4JbJU2WCIsMRn5C4yW9+DgkaO8uiVE5VHKjpmdQ==",
+    "Newtonsoft.Json/12.0.2": {
+      "sha512": "rTK0s2EKlfHsQsH6Yx2smvcTCeyoDNgCW7FEYyV01drPlh2T243PR2DiDXqtC5N4GDm4Ma/lkxfW5a/4793vbA==",
       "type": "package",
-      "path": "newtonsoft.json/11.0.2",
+      "path": "newtonsoft.json/12.0.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -8065,7 +8093,7 @@
         "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.xml",
         "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.dll",
         "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.xml",
-        "newtonsoft.json.11.0.2.nupkg.sha512",
+        "newtonsoft.json.12.0.2.nupkg.sha512",
         "newtonsoft.json.nuspec"
       ]
     },
@@ -12942,10 +12970,21 @@
         "system.xml.xpath.xdocument.4.3.0.nupkg.sha512",
         "system.xml.xpath.xdocument.nuspec"
       ]
+    },
+    "CrazyShop.Lib/1.0.0": {
+      "type": "project",
+      "path": "../CrazyShop.Lib/CrazyShop.Lib.csproj",
+      "msbuildProject": "../CrazyShop.Lib/CrazyShop.Lib.csproj"
+    },
+    "CrazyShop.Lib.DAL/1.0.0": {
+      "type": "project",
+      "path": "../CrazyShop.Lib.DAL/CrazyShop.Lib.DAL.csproj",
+      "msbuildProject": "../CrazyShop.Lib.DAL/CrazyShop.Lib.DAL.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.2": [
+      "CrazyShop.Lib.DAL >= 1.0.0",
       "Microsoft.AspNetCore.App >= 2.2.0",
       "Microsoft.AspNetCore.Razor.Design >= 2.2.0",
       "Microsoft.EntityFrameworkCore >= 2.2.4",
@@ -12990,7 +13029,11 @@
       },
       "frameworks": {
         "netcoreapp2.2": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Dev\\CrazyShop\\CrazyShop\\CrazyShop.Lib.DAL\\CrazyShop.Lib.DAL.csproj": {
+              "projectPath": "C:\\Dev\\CrazyShop\\CrazyShop\\CrazyShop.Lib.DAL\\CrazyShop.Lib.DAL.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

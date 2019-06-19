@@ -4,3 +4,9 @@ C:\Dev\CrazyShop\CrazyShop\CrazyShop.Lib.DAL\obj\Debug\netstandard2.0\CrazyShop.
 C:\Dev\CrazyShop\CrazyShop\CrazyShop.Lib.DAL\obj\Debug\netstandard2.0\CrazyShop.Lib.DAL.csproj.CoreCompileInputs.cache
 C:\Dev\CrazyShop\CrazyShop\CrazyShop.Lib.DAL\obj\Debug\netstandard2.0\CrazyShop.Lib.DAL.AssemblyInfoInputs.cache
 C:\Dev\CrazyShop\CrazyShop\CrazyShop.Lib.DAL\obj\Debug\netstandard2.0\CrazyShop.Lib.DAL.AssemblyInfo.cs
+C:\Dev\CrazyShop\CrazyShop\CrazyShop.Lib.DAL\bin\Debug\netstandard2.0\CrazyShop.Lib.DAL.pdb
+C:\Dev\CrazyShop\CrazyShop\CrazyShop.Lib.DAL\obj\Debug\netstandard2.0\CrazyShop.Lib.DAL.dll
+C:\Dev\CrazyShop\CrazyShop\CrazyShop.Lib.DAL\obj\Debug\netstandard2.0\CrazyShop.Lib.DAL.pdb
+C:\Dev\CrazyShop\CrazyShop\CrazyShop.Lib.DAL\bin\Debug\netstandard2.0\CrazyShop.Lib.dll
+C:\Dev\CrazyShop\CrazyShop\CrazyShop.Lib.DAL\bin\Debug\netstandard2.0\CrazyShop.Lib.pdb
+C:\Dev\CrazyShop\CrazyShop\CrazyShop.Lib.DAL\obj\Debug\netstandard2.0\CrazyShop.Lib.DAL.csproj.CopyComplete
