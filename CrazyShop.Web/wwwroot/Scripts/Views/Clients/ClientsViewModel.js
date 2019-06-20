@@ -146,6 +146,7 @@
         this.Clients[index] = client;
         this.SelectedClient = null;
         this.Clean();
+        this.GetAllClients();
     }
 
     RemoveClient(client)

@@ -11,10 +11,11 @@
                         <option value="" disabled selected>Select a Client</option>
                     </select>
                     Select Product
-                    <select ng-model="vm.SelectedProduct" ng-options="product.ProductName for product in vm.Products" required>
+                    <select ng-model="vm.SelectedProduct" ng-options="product.Name for product in vm.Products" required>
                         <option value="" disabled selected>Select a Product</option>
                     </select>
-                    <input type="submit" value="Buy" id="AddButton" class="submit" ng-click="vm.CheckFormSave(MyForm.$valid)" ng-show="!vm.IsEditing">
+                    <input class="text" type="text" ng-model="vm.Quantity" placeholder="Quantity" required>
+                    <input type="submit" value="Buy" id="AddButton" class="submit" ng-click="vm.CheckFormAdd(MyForm.$valid)" ng-show="!vm.IsEditing">
                 </form>
             </div>
         </div>

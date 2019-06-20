@@ -19,7 +19,7 @@
                 data: 'vm.Products',
                 appScopeProvider: this,
             columnDefs: [
-                { name: 'Name', field: 'Name' },
+                    { name: 'Name', field: 'Name' },
                     { name: 'Price', field: 'Price' },
                     { name: '', field: 'Id', cellTemplate: '<input type="button" value="Edit" ng-click="grid.appScope.Select(row.entity)">' },
                     { name: ' ', field: 'Id', cellTemplate: '<input type="button" value="Remove" ng-click="grid.appScope.RemoveProduct(row.entity)">'}
@@ -29,7 +29,7 @@
 
     GetAllProducts()
     {
-        this.ProductsService.GetAllAsync("api/products")
+        this.ProductsService.GetAllAsync()
             .then((response) => {
                 this.OnGetData(response);
             });
@@ -80,7 +80,7 @@
 
     Clean()
     {
-        this.ProductName = "";
+        this.Name = "";
         this.Price = 0;
     }
 
@@ -106,6 +106,8 @@
         this.SelectedProduct.Price = this.Price;
         this.SaveEditProduct();
         this.IsEditing = false;
+        this.Clean();
+        this.SelectedProduct = null;
     }
 
     SaveEditProduct()
@@ -124,9 +126,9 @@
     {
         let product = new Product(response.data)
         let index = this.Products.findIndex(x => x.Id == this.SelectedProduct.Id);
-        this.Products[index] = product;
-        this.SelectedProduct = null;
-        this.Clean();
+        this.Products.splice(index, 1, product)
+        //this.Products[index] = product;
+        this.GetAllProducts();
     }
 
     RemoveProduct(product)
