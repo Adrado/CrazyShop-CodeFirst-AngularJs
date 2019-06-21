@@ -164,7 +164,7 @@
 
 app.component('employees',
 {
-    templateUrl: './Scripts/Views/Employees/EmployeesView.html',
+    templateUrl: './Scripts/Views/Index/Home/Employees/EmployeesView.html',
     controller: EmployeesViewModel,
     controllerAs: "vm"
     });

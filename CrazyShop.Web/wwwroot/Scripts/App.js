@@ -21,6 +21,18 @@ app.config(function ($routeProvider, $locationProvider)
         {
             template: '<purchases></purchases>'
         });
+    $routeProvider.when('/register',
+        {
+            template: '<register></register>'
+        });
+    $routeProvider.when('/login',
+        {
+            template: '<login></login>'
+        });
+    $routeProvider.when('/home',
+        {
+            template: '<login></login>'
+        });
 
     // use the HTML5 History API
     $locationProvider.html5Mode(true);

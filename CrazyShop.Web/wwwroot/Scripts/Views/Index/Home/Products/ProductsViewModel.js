@@ -151,7 +151,7 @@
 
 app.component('products',
 {
-    templateUrl: './Scripts/Views/Products/ProductsView.html',
+    templateUrl: './Scripts/Views/Index/Home//Products/ProductsView.html',
     controller: ProductsViewModel,
     controllerAs: "vm"
 });

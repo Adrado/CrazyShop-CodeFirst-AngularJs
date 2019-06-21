@@ -269,7 +269,7 @@
 
 app.component('purchases',
     {
-        templateUrl: './Scripts/Views/Purchases/PurchasesView.html',
+        templateUrl: './Scripts/Views/Index/Home/Purchases/PurchasesView.html',
         controller: PurchasesViewModel,
         controllerAs: "vm"
     });

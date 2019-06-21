@@ -47,7 +47,7 @@
 
 app.component('users',
 {
-    templateUrl: './Scripts/Views/Users/UsersView.html',
+    templateUrl: './Scripts/Views/Index/Home//Users/UsersView.html',
     controller: UsersViewModel,
     controllerAs: "vm"
     });

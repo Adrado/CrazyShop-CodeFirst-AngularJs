@@ -13,7 +13,7 @@
 
 app.component('menu',
 {
-    templateUrl: './Scripts/Views/Menu/MenuView.html',
+    templateUrl: './Scripts/Views/Index/Home/Menu/MenuView.html',
     controller: MenuViewModel,
     controllerAs: "vm",
     function($scope)

@@ -170,7 +170,7 @@
 
 app.component('clients',
 {
-    templateUrl: './Scripts/Views/Clients/ClientsView.html',
+    templateUrl: './Scripts/Views/Index/Home/Clients/ClientsView.html',
     controller: ClientsViewModel,
     controllerAs: "vm"
     });

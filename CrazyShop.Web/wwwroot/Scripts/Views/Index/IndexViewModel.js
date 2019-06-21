@@ -7,7 +7,7 @@
 
 app.component('index',
 {
-    templateUrl: './Scripts/Views/IndexView.html',
+    templateUrl: './Scripts/Views/Index/IndexView.html',
     controller: IndexViewModel,
     controllerAs: "vm"
 });

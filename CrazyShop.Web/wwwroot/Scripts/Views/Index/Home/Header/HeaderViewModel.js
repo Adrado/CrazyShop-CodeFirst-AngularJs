@@ -16,7 +16,7 @@
 
 app.component('header',
 {
-    templateUrl: './Scripts/Views/Header/HeaderView.html',
+    templateUrl: './Scripts/Views/Index/Home/Header/HeaderView.html',
     controller: HeaderViewModel,
     controllerAs: "vm"
 });
