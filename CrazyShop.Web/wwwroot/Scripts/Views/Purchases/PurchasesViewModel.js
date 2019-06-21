@@ -55,6 +55,40 @@
             let purchase = new Purchase(response.data[i]);
             this.Purchases.push(purchase);
         }
+
+        this.FillClientsPurchases()
+    }
+
+    FillClientsPurchases()
+    {
+        
+        for (let i in this.Purchases)
+        {
+            let clientPurchase = new ClientPurchase()
+            let purchase = this.Purchases[i];
+            clientPurchase.PurchaseId = purchase.Id;
+            clientPurchase.Quantity = purchase.Quantity;
+            for (let j in this.Clients)
+            {
+                let client = this.Clients[j];
+                if (purchase.ClientId === client.Id)
+                {
+                    clientPurchase.ClientName = client.Name;
+                    break;
+                }
+            }
+
+            for (let k in this.Products)
+            {
+                let product = this.Products[k];
+                if (purchase.ProductId === product.Id)
+                {
+                    clientPurchase.ProductName = product.Name;
+                    break;
+                }
+            }
+            this.ClientsPurchases.push(clientPurchase);
+        }
     }
 
     CheckFormAdd(complete)

@@ -6,4 +6,4 @@
     }
 }
 
-app.service("$PurchasesService", ProductsService);
+app.service("$PurchasesService", PurchasesService);

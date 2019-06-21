@@ -13,13 +13,22 @@
 
     PostAsync(entity)
     {
-        return this.Http.post(this.Url, entity)
+        var config =
+        {
+            headers: { 'Content-Type': 'application/json' }
+            //token: {'tokenguardado'} ParaLogin Service
+        }
+        return this.Http.post(this.Url, entity, config)
     }
 
     PutAsync(entity)
     {
+        var config =
+        {
+            headers: { 'Content-Type': 'application/json' }
+        }
         let urlID = this.Url + entity.Id;
-        return this.Http.put(urlID, entity)
+        return this.Http.put(urlID, entity, config)
     }
 
     DeleteAsync(entity)
