@@ -2,7 +2,7 @@
 {
     constructor()
     {
-        alert("Register View");
+        
     }
 }
 

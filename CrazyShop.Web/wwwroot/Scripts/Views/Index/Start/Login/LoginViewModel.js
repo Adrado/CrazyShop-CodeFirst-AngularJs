@@ -1,13 +1,24 @@
 ﻿class LoginViewModel
 {
-    constructor($location)
+    constructor($LoginService)
     {
-        this.Location = $location;
+        this.LoginService = $LoginService;
+        this.IsEditing = false;
     }
 
-    ShowView(option)
+    login()
     {
-        this.Location.path("/" + option);
+        let loginRequest = new LoginRequest(this.email, this.password)
+        this.LoginService.PostAsync(LoginRequest)
+            .then((response) =>
+            {
+                this.Window.Token = response.data.token;
+            },
+                (error) =>
+                {
+                    alert(error.data.message);
+                    this.Window.Token = null;
+                });
     }
 }
 

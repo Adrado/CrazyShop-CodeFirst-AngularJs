@@ -3,11 +3,20 @@
     {
         width: 100px;
         height: 100px;
+        background: black;
+
     }
 </style>
-<div class="Login">
-    Estamos en el Login
-    <button ng-click="vm.ShowView('home')">Home</button>
-    <button ng-click="vm.ShowView('register')">Register</button>
-    <button ng-click="vm.ShowView('menu')">Menu</button>
+<div class="View">
+    <div class="main-w3layouts wrapper">
+        <div class="main-agileinfo">
+            <div class="agileits-top">
+                <form name="MyForm">
+                    <input class="text" type="text" ng-model="vm.Name" placeholder="Correo" required>
+                    <input class="text" type="text" ng-model="vm.Price" placeholder="Password" required>
+                    <input type="submit" value="Enter" id="AddButton" class="submit" ng-click="vm.CheckFormAdd(MyForm.$valid)" ng-show="!vm.IsEditing">
+                </form>
+            </div>
+        </div>
+    </div>
 </div>

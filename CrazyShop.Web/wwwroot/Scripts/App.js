@@ -31,7 +31,11 @@ app.config(function ($routeProvider, $locationProvider)
         });
     $routeProvider.when('/home',
         {
-            template: '<login></login>'
+            template: '<home></home>'
+        });
+    $routeProvider.when('/start',
+        {
+            template: '<start></start>'
         });
 
     // use the HTML5 History API

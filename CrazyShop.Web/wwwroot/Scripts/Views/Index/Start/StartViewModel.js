@@ -1,7 +1,13 @@
 ﻿class StartViewModel
 {
-    constructor()
+    constructor($location)
     {
+        this.Location = $location;
+    }
+
+    ShowView(option)
+    {
+        this.Location.path("/" + option);
     }
 }
 
