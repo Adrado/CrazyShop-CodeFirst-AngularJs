@@ -71,16 +71,16 @@
 
     SetData(client)
     {
-        this.ClientsService.PostAsync(client)
+        this.ClientsService.AddAsync(client)
         .then((response) =>
         {
-            this.OnSuccesPost(response);
+            this.OnSuccesAdd(response);
         },
             response => console.log(response)
         );
     }
 
-    OnSuccesPost(response)
+    OnSuccesAdd(response)
     {
         let client = new Client(response.data)
         this.Clients.push(client);
@@ -130,16 +130,16 @@
 
     SaveEditClient()
     {
-        this.ClientsService.PutAsync(this.SelectedClient)
+        this.ClientsService.UpdateAsync(this.SelectedClient)
             .then((response) =>
             {
-                this.OnSuccesEdit(response);
+                this.OnSuccesUpdate(response);
             },
                 response => console.log(response)
             );
     }
 
-    OnSuccesEdit(response)
+    OnSuccesUpdate(response)
     {
         let client = new Client(response.data)
         let index = this.Clients.findIndex(x => x.Id == this.SelectedClient.Id);

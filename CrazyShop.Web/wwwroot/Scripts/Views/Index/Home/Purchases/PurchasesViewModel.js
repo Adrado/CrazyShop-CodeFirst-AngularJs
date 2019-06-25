@@ -114,17 +114,17 @@
     SetData(purchase)
     {
         alert(purchase.Quantity);
-        this.PurchasesService.PostAsync(purchase)
+        this.PurchasesService.AddAsync(purchase)
             .then((response) =>
             {
-                this.OnSuccesPost(response);
+                this.OnSuccesAdd(response);
                 console.log(response);
             },
                 response => console.log(response)
             );
     }
 
-    OnSuccesPost(response)
+    OnSuccesAdd(response)
     {
         let purchase = new Purchase(response.data)
         this.Purchases.push(purchase);
@@ -172,16 +172,16 @@
 
     SaveEditClient()
     {
-        this.ClientsService.PutAsync(this.SelectedClient)
+        this.ClientsService.UpdateAsync(this.SelectedClient)
             .then((response) =>
             {
-                this.OnSuccesEdit(response);
+                this.OnSuccesUpdate(response);
             },
                 response => console.log(response)
             );
     }
 
-    OnSuccesEdit(response)
+    OnSuccesUpdate(response)
     {
         let client = new Client(response.data)
         let index = this.Clients.findIndex(x => x.Id == this.SelectedClient.Id);

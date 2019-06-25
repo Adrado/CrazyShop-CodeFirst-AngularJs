@@ -70,16 +70,16 @@
 
     SetData(employee)
     {
-        this.EmployeesService.PostAsync(employee)
+        this.EmployeesService.AddAsync(employee)
             .then((response) =>
             {
-                this.OnSuccesPost(response);
+                this.OnSuccesAdd(response);
             },
                 response => console.log(response)
             );
     }
 
-    OnSuccesPost(response)
+    OnSuccesAdd(response)
     {
         let employee = new Employee(response.data)
         this.Employees.push(employee);
@@ -128,16 +128,16 @@
 
     SaveEditEmployee()
     {
-        this.EmployeesService.PutAsync(this.SelectedEmployee)
+        this.EmployeesService.UpdateAsync(this.SelectedEmployee)
             .then((response) =>
             {
-                this.OnSuccesEdit(response);
+                this.OnSuccesUpdate(response);
             },
                 response => console.log(response)
             );
     }
 
-    OnSuccesEdit(response)
+    OnSuccesUpdate(response)
     {
         let employee = new Employee(response.data)
         let index = this.Employees.findIndex(x => x.Id == this.SelectedEmployee.Id);

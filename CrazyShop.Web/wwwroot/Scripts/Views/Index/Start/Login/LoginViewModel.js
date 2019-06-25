@@ -6,10 +6,19 @@
         this.IsEditing = false;
     }
 
+
+    CheckFormLogin(complete)
+    {
+        if (complete)
+        {
+            this.login()
+        }
+    }
+
     login()
     {
         let loginRequest = new LoginRequest(this.email, this.password)
-        this.LoginService.PostAsync(LoginRequest)
+        this.LoginService.PostAsync(loginRequest)
             .then((response) =>
             {
                 this.Window.Token = response.data.token;

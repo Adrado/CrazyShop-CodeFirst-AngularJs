@@ -12,9 +12,9 @@
         <div class="main-agileinfo">
             <div class="agileits-top">
                 <form name="MyForm">
-                    <input class="text" type="text" ng-model="vm.Name" placeholder="Correo" required>
-                    <input class="text" type="text" ng-model="vm.Price" placeholder="Password" required>
-                    <input type="submit" value="Enter" id="AddButton" class="submit" ng-click="vm.CheckFormAdd(MyForm.$valid)" ng-show="!vm.IsEditing">
+                    <input class="text" type="text" ng-model="vm.Email" placeholder="Correo" required>
+                    <input class="text" type="text" ng-model="vm.Password" placeholder="Password" required>
+                    <input type="submit" value="Enter" id="AddButton" class="submit" ng-click="vm.CheckFormLogin(MyForm.$valid)" ng-show="!vm.IsEditing">
                 </form>
             </div>
         </div>

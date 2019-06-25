@@ -1,4 +1,4 @@
-﻿class EmployeesService extends GenericService
+﻿class EmployeesService extends CRUDService
 {
     constructor($http)
     {

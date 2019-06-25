@@ -63,15 +63,15 @@
 
     SetData(product)
     {
-        this.ProductsService.PostAsync(product)
+        this.ProductsService.AddAsync(product)
             .then((response) => {
-                this.OnSuccesPost(response);
+                this.OnSuccesAdd(response);
             },
                 response => console.log(response)
             );
     }
 
-    OnSuccesPost(response)
+    OnSuccesAdd(response)
     {
         let product = new Product(response.data)
         this.Products.push(product);
@@ -113,16 +113,16 @@
     SaveEditProduct()
     {
 
-        this.ProductsService.PutAsync(this.SelectedProduct)
+        this.ProductsService.UpdateAsync(this.SelectedProduct)
             .then((response) =>
             {
-                this.OnSuccesEdit(response);
+                this.OnSuccesUpdate(response);
             },
                 response => console.log(response)
             ); 
     }
 
-    OnSuccesEdit(response)
+    OnSuccesUpdate(response)
     {
         let product = new Product(response.data)
         let index = this.Products.findIndex(x => x.Id == this.SelectedProduct.Id);

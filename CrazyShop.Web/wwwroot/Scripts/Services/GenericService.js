@@ -1,37 +1,41 @@
 ﻿class GenericService
 {
+    get Config()
+    {
+        var config =
+        {
+            headers:
+            {
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + this.Token
+            }
+        };
+        return config;
+    }
+
     constructor(http, url)
     {
         this.Http = http;
         this.Url = url;
     }
 
-    GetAllAsync()
+    Get()
     {
         return this.Http.get(this.Url);
     }
 
-    PostAsync(entity)
+    Post(entity)
     {
-        var config =
-        {
-            headers: { 'Content-Type': 'application/json' }
-            //token: {'tokenguardado'} ParaLogin Service
-        }
-        return this.Http.post(this.Url, entity, config)
+        return this.Http.post(this.Url, entity, this.Config)
     }
 
-    PutAsync(entity)
+    Put(entity)
     {
-        var config =
-        {
-            headers: { 'Content-Type': 'application/json' }
-        }
         let urlID = this.Url + entity.Id;
-        return this.Http.put(urlID, entity, config)
+        return this.Http.put(urlID, entity, this.Config)
     }
 
-    DeleteAsync(entity)
+    Delete(entity)
     {
         let urlID = this.Url + entity.Id;
         return this.Http.delete(urlID)
