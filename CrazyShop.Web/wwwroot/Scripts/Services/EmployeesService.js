@@ -1,8 +1,8 @@
 ﻿class EmployeesService extends CRUDService
 {
-    constructor($http)
+    constructor($http, $window)
     {
-        super($http, "api/employees/");
+        super($http, "api/employees/", $window);
     }
 }
 

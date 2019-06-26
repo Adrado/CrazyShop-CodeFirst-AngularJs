@@ -18,16 +18,16 @@
     login()
     {
         let loginRequest = new LoginRequest(this.email, this.password)
-        this.LoginService.PostAsync(loginRequest)
+        this.LoginService.Post(loginRequest)
             .then((response) =>
             {
                 this.Window.Token = response.data.token;
             },
-                (error) =>
-                {
-                    alert(error.data.message);
-                    this.Window.Token = null;
-                });
+            (error) =>
+            {
+                console.log(error);
+                this.Window.Token = null;
+            });
     }
 }
 

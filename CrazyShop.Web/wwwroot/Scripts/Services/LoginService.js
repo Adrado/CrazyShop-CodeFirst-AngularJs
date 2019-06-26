@@ -1,8 +1,8 @@
 ﻿class LoginService extends GenericService
 {
-    constructor($http)
+    constructor($http, $window)
     {
-        super($http, "api/login/");
+        super($http, "api/login/", window);
     }
 }
 

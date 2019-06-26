@@ -1,8 +1,8 @@
 ﻿class CRUDService extends GenericService
 {
-    constructor(http, url)
+    constructor(http, url, $window)
     {
-        super(http, url);
+        super(http, url, $window);
     }
 
     GetAllAsync()

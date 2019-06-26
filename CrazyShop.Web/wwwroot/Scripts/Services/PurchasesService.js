@@ -1,8 +1,8 @@
 ﻿class PurchasesService extends CRUDService
 {
-    constructor($http)
+    constructor($http, $window)
     {
-        super($http, "api/purchases/");
+        super($http, "api/purchases/", $window);
     }
 }
 

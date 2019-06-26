@@ -9,6 +9,7 @@ using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
+using CrazyShop.Lib.DAL;
 
 namespace CrazyShop.Web.Services
 {
@@ -24,7 +25,7 @@ namespace CrazyShop.Web.Services
         // users hardcoded for simplicity, store in a db with hashed passwords in production applications
         private static List<User> _users = new List<User>
         {
-            new User { Id = Guid.NewGuid(), Name = "Lolo", Email="u@u", Surname = "pocholo",  Password = "1234" },
+            new Client { Id = Guid.NewGuid(), Name = "Lolo", Email="u@u", Surname = "pocholo",  Password = "1234" },
             new Employee { Id = Guid.NewGuid(), Name = "Admin", Email="a@a", Surname = "fds", Password = "1234" }
         };
 
@@ -34,6 +35,7 @@ namespace CrazyShop.Web.Services
         {
             _appSettings = appSettings.Value;
         }
+
 
         public User Authenticate(string email, string password)
         {

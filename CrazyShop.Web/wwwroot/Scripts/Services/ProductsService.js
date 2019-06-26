@@ -1,8 +1,8 @@
 ﻿class ProductsService extends CRUDService
 {
-    constructor($http)
+    constructor($http, $window)
     {
-        super($http, "api/products/");
+        super($http, "api/products/", $window);
     }
 }
 

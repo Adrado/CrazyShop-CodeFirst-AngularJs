@@ -13,10 +13,11 @@
         return config;
     }
 
-    constructor(http, url)
+    constructor(http, url, window)
     {
         this.Http = http;
         this.Url = url;
+        this.Token = window.Token;
     }
 
     Get()

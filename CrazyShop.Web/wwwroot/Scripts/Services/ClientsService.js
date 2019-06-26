@@ -1,8 +1,8 @@
 ﻿class ClientsService extends CRUDService
 {
-    constructor($http)
+    constructor($http, $window)
     {
-        super($http, "api/clients/");
+        super($http, "api/clients/", $window);
     }
 }
 

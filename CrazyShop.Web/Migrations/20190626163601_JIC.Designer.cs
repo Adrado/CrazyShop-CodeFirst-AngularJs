@@ -4,14 +4,16 @@ using CrazyShop.Lib.DAL;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CrazyShop.Web.Migrations
 {
     [DbContext(typeof(CrazyShopDbContext))]
-    partial class CrazyShopDbContextModelSnapshot : ModelSnapshot
+    [Migration("20190626163601_JIC")]
+    partial class JIC
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
