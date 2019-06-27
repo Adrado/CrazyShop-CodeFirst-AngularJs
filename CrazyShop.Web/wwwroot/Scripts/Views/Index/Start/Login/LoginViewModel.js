@@ -1,8 +1,9 @@
 ﻿class LoginViewModel
 {
-    constructor($LoginService)
+    constructor($LoginService, $window)
     {
         this.LoginService = $LoginService;
+        this.Window = $window;
         this.IsEditing = false;
     }
 
@@ -17,11 +18,12 @@
 
     login()
     {
-        let loginRequest = new LoginRequest(this.email, this.password)
+        let loginRequest = new LoginRequest(this.Email, this.Password);
         this.LoginService.Post(loginRequest)
             .then((response) =>
             {
                 this.Window.Token = response.data.token;
+                alert(this.Window.Token);
             },
             (error) =>
             {

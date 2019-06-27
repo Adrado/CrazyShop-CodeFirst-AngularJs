@@ -31,8 +31,7 @@
                 columnDefs: [
                     { name: 'Client', field: 'ClientName' },
                     { name: 'Product', field: 'ProductName' },
-                    { name: 'Quantity', field: 'Quantity' },
-                    { name: '', field: 'Id', cellTemplate: '<input type="button" value="Existe" ng-click="grid.appScope.Select(row.entity)">' },
+                    { name: 'Quantity', field: 'Quantity' }
                 ]
             };
     }

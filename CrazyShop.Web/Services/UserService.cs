@@ -23,23 +23,25 @@ namespace CrazyShop.Web.Services
     public class UserService : IUserService
     {
         // users hardcoded for simplicity, store in a db with hashed passwords in production applications
-        private static List<User> _users = new List<User>
-        {
-            new Client { Id = Guid.NewGuid(), Name = "Lolo", Email="u@u", Surname = "pocholo",  Password = "1234" },
-            new Employee { Id = Guid.NewGuid(), Name = "Admin", Email="a@a", Surname = "fds", Password = "1234" }
-        };
+        //private static List<User> _users = new List<User>
+        //{
+        //    new Client { Id = Guid.NewGuid(), Name = "Lolo", Email="u@u", Surname = "pocholo",  Password = "1234" },
+        //    new Employee { Id = Guid.NewGuid(), Name = "Admin", Email="a@a", Surname = "fds", Password = "1234" }
+        //};
 
         private readonly AppSettings _appSettings;
+        private readonly CrazyShopDbContext _context;
 
-        public UserService(IOptions<AppSettings> appSettings)
+        public UserService(IOptions<AppSettings> appSettings, CrazyShopDbContext context)
         {
             _appSettings = appSettings.Value;
+            _context = context;
         }
 
 
         public User Authenticate(string email, string password)
         {
-            var user = _users.SingleOrDefault(x => x.Email == email && x.Password == password);
+            var user = _context.Users.SingleOrDefault(x => x.Email == email || x.Password == password);
 
             // return null if user not found
             if (user == null)
@@ -67,15 +69,12 @@ namespace CrazyShop.Web.Services
         public IEnumerable<User> GetAll()
         {
             // return users without passwords
-            return _users.Select(x => {
-                x.Password = null;
-                return x;
-            });
+            return _context.Users;
         }
 
         public User GetById(Guid id)
         {
-            var user = _users.FirstOrDefault(x => x.Id == id);
+            var user = _context.Users.FirstOrDefault(x => x.Id == id);
             return user;
         }
     }

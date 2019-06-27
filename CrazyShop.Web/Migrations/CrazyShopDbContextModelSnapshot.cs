@@ -19,50 +19,6 @@ namespace CrazyShop.Web.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("CrazyShop.Lib.Models.Client", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("Address");
-
-                    b.Property<string>("Email");
-
-                    b.Property<string>("Name");
-
-                    b.Property<string>("Password");
-
-                    b.Property<string>("Surname");
-
-                    b.Property<string>("Token");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Clients");
-                });
-
-            modelBuilder.Entity("CrazyShop.Lib.Models.Employee", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("Email");
-
-                    b.Property<string>("Name");
-
-                    b.Property<string>("Password");
-
-                    b.Property<string>("Shift");
-
-                    b.Property<string>("Surname");
-
-                    b.Property<string>("Token");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Employees");
-                });
-
             modelBuilder.Entity("CrazyShop.Lib.Models.Product", b =>
                 {
                     b.Property<Guid>("Id")
@@ -95,6 +51,49 @@ namespace CrazyShop.Web.Migrations
                     b.HasIndex("ProductId");
 
                     b.ToTable("Purchases");
+                });
+
+            modelBuilder.Entity("CrazyShop.Lib.Models.User", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Discriminator")
+                        .IsRequired();
+
+                    b.Property<string>("Email");
+
+                    b.Property<string>("Name");
+
+                    b.Property<string>("Password");
+
+                    b.Property<string>("Surname");
+
+                    b.Property<string>("Token");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Users");
+
+                    b.HasDiscriminator<string>("Discriminator").HasValue("User");
+                });
+
+            modelBuilder.Entity("CrazyShop.Lib.Models.Client", b =>
+                {
+                    b.HasBaseType("CrazyShop.Lib.Models.User");
+
+                    b.Property<string>("Address");
+
+                    b.HasDiscriminator().HasValue("Client");
+                });
+
+            modelBuilder.Entity("CrazyShop.Lib.Models.Employee", b =>
+                {
+                    b.HasBaseType("CrazyShop.Lib.Models.User");
+
+                    b.Property<string>("Shift");
+
+                    b.HasDiscriminator().HasValue("Employee");
                 });
 
             modelBuilder.Entity("CrazyShop.Lib.Models.Purchase", b =>

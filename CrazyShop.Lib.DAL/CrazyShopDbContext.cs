@@ -10,9 +10,11 @@ namespace CrazyShop.Lib.DAL
         {
         }
 
+        public DbSet<User> Users { get; set; }
         public DbSet<Client> Clients { get; set; }
         public DbSet<Employee> Employees { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<Purchase> Purchases { get; set; }
+       
     }
 }

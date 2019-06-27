@@ -2,7 +2,7 @@
 {
     constructor($http, $window)
     {
-        super($http, "api/login/", window);
+        super($http, "api/login", $window);
     }
 }
 
