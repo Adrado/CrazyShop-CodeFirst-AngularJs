@@ -1,8 +1,12 @@
 ﻿class RegisterViewModel
 {
-    constructor()
+    constructor($window)
     {
-        
+        this.Window = $window;
+    }
+    ChangeToLogin()
+    {
+        this.Window.AccountUser = true;
     }
 }
 
