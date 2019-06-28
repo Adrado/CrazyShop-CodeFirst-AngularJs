@@ -1,13 +1,27 @@
 ﻿class StartViewModel
 {
-    constructor($location)
+    constructor($location, $window)
     {
         this.Location = $location;
+        this.Window = $window;
+        this.Window.AccountUser = true;
     }
 
     ShowView(option)
     {
         this.Location.path("/" + option);
+    }
+
+    get HaveAccount()
+    {
+        if (this.Window.AccountUser)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 }
 

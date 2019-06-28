@@ -1,4 +1,4 @@
-﻿class ClientsViewModel
+﻿    class ClientsViewModel
 {
     constructor($ClientsService)
     {

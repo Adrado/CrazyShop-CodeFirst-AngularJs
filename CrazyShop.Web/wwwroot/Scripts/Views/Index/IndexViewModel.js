@@ -1,13 +1,26 @@
 ﻿class IndexViewModel
 {
-    constructor($location)
+    constructor($location, $window)
     {
         this.Location = $location;
+        this.Window = $window;
     }
 
     ShowView(option)
     {
         this.Location.path("/" + option);
+    }
+
+    get IsLogon()
+    {
+        if (this.Window.LogonUser)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 }
 

@@ -31,6 +31,11 @@
                 this.Window.Token = null;
             });
     }
+
+    ChangeToRegister()
+    {
+        this.Window.AccountUser = false;
+    }
 }
 
 app.component('login',

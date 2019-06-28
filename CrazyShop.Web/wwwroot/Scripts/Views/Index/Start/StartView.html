@@ -1,6 +1,11 @@
-﻿<div>
-    <!--Start
-    <div ng-view ng-init="vm.ShowView('login')"></div>-->
-    <!--<login></login>
-    <register></register>-->
+﻿<!--<div>
+    Start
+    <div ng-view ng-init="vm.ShowView('login')"></div>
+    <login></login>
+    <register></register>
+</div>-->
+
+<div>
+    <login ng-show="vm.HaveAccount"></login>
+    <register ng-show="!vm.HaveAccount"></register>
 </div>
