@@ -5,6 +5,7 @@
         this.LoginService = $LoginService;
         this.Window = $window;
         this.IsEditing = false;
+        this
     }
 
 
@@ -24,6 +25,7 @@
             {
                 this.Window.Token = response.data.token;
                 alert(this.Window.Token);
+                this.Window.LogonUser = true;
             },
             (error) =>
             {

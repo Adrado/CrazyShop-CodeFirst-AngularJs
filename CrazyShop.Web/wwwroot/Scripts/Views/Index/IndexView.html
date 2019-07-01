@@ -40,21 +40,8 @@
    
 </style>
 
-<!--<div>
-    <button ng-click="vm.ShowView('login')">Login</button>
-    <button ng-click="vm.ShowView('register')">Register</button>
-    <button ng-click="vm.ShowView('clients')">Clients</button>
-    <button ng-click="vm.ShowView('employees')">Employees</button>
-    <button ng-click="vm.ShowView('products')">Products</button>
-    <button ng-click="vm.ShowView('purchases')">Purchases</button>
-</div>
-<div ng-view ng-init="vm.ShowView('login')">
-
-</div>-->
-
 
 <div>
     <start class="MainContainer" ng-show="!vm.IsLogon"></start>
-
     <home ng-show="vm.IsLogon"></home>
 </div>

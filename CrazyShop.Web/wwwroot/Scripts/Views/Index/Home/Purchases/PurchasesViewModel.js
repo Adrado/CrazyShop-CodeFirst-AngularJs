@@ -60,7 +60,7 @@
 
     FillClientsPurchases()
     {
-        
+        this.ClientsPurchases.length = 0;
         for (let i in this.Purchases)
         {
             let clientPurchase = new ClientPurchase()
@@ -128,6 +128,7 @@
         let purchase = new Purchase(response.data)
         this.Purchases.push(purchase);
         this.Clean();
+        this.FillClientsPurchases();
     }
 
     Clean()

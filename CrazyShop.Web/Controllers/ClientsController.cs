@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using CrazyShop.Lib.DAL;
 using CrazyShop.Lib.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace CrazyShop.Web.Controllers
 {

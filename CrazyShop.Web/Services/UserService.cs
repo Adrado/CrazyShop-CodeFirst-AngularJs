@@ -41,7 +41,7 @@ namespace CrazyShop.Web.Services
 
         public User Authenticate(string email, string password)
         {
-            var user = _context.Users.SingleOrDefault(x => x.Email == email || x.Password == password);
+            var user = _context.Users.SingleOrDefault(x => x.Email == email && x.Password == password);
 
             // return null if user not found
             if (user == null)
