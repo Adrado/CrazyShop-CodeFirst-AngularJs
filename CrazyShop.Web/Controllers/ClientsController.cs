@@ -45,6 +45,7 @@ namespace CrazyShop.Web.Controllers
 
         // PUT: api/Clients/5
         [HttpPut("{id}")]
+        [Authorize(Roles = "Employee")]
         public async Task<IActionResult> PutClient(Guid id, Client client)
         {
             if (id != client.Id)
@@ -75,6 +76,7 @@ namespace CrazyShop.Web.Controllers
 
         // POST: api/Clients
         [HttpPost]
+        [Authorize(Roles = "Employee")]
         public async Task<ActionResult<Client>> PostClient(Client client)
         {
             _context.Clients.Add(client);
@@ -85,6 +87,7 @@ namespace CrazyShop.Web.Controllers
 
         // DELETE: api/Clients/5
         [HttpDelete("{id}")]
+        [Authorize(Roles = "Employee")]
         public async Task<ActionResult<Client>> DeleteClient(Guid id)
         {
             var client = await _context.Clients.FindAsync(id);

@@ -16,19 +16,11 @@ namespace CrazyShop.Web.Services
     public interface IUserService
     {
         User Authenticate(string username, string password);
-        IEnumerable<User> GetAll();
         User GetById(Guid id);
     }
 
     public class UserService : IUserService
     {
-        // users hardcoded for simplicity, store in a db with hashed passwords in production applications
-        //private static List<User> _users = new List<User>
-        //{
-        //    new Client { Id = Guid.NewGuid(), Name = "Lolo", Email="u@u", Surname = "pocholo",  Password = "1234" },
-        //    new Employee { Id = Guid.NewGuid(), Name = "Admin", Email="a@a", Surname = "fds", Password = "1234" }
-        //};
-
         private readonly AppSettings _appSettings;
         private readonly CrazyShopDbContext _context;
 
@@ -66,11 +58,11 @@ namespace CrazyShop.Web.Services
             return user;
         }
 
-        public IEnumerable<User> GetAll()
-        {
-            // return users without passwords
-            return _context.Users;
-        }
+        //public IEnumerable<User> GetAll()
+        //{
+        //    // return users without passwords
+        //    return _context.Users;
+        //}
 
         public User GetById(Guid id)
         {

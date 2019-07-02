@@ -112,7 +112,6 @@
 
     SetData(purchase)
     {
-        alert(purchase.Quantity);
         this.PurchasesService.AddAsync(purchase)
             .then((response) =>
             {

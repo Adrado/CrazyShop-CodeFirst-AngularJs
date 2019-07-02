@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using CrazyShop.Lib.DAL;
 using CrazyShop.Lib.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace CrazyShop.Web.Controllers
 {
@@ -44,6 +45,7 @@ namespace CrazyShop.Web.Controllers
 
         // PUT: api/Products/5
         [HttpPut("{id}")]
+        [Authorize(Roles = "Employee")]
         public async Task<IActionResult> PutProduct(Guid id, Product product)
         {
             if (id != product.Id)
@@ -74,6 +76,7 @@ namespace CrazyShop.Web.Controllers
 
         // POST: api/Products
         [HttpPost]
+        [Authorize (Roles = "Employee")]
         public async Task<ActionResult<Product>> PostProduct(Product product)
         {
             _context.Products.Add(product);
@@ -84,6 +87,7 @@ namespace CrazyShop.Web.Controllers
 
         // DELETE: api/Products/5
         [HttpDelete("{id}")]
+        [Authorize(Roles = "Employee")]
         public async Task<ActionResult<Product>> DeleteProduct(Guid id)
         {
             var product = await _context.Products.FindAsync(id);
