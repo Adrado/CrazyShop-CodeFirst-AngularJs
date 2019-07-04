@@ -8,13 +8,13 @@
     </div>
     <ul class="list-unstyled components">
         <li>
-            <a ng-click="vm.ShowView('clients')">Clients</a>
+            <a ng-click="vm.ShowView('clients')" ng-show="vm.IsEmployee">Clients</a>
         </li>
         <li>
-            <a ng-click="vm.ShowView('employees')">Employees</a>
+            <a ng-click="vm.ShowView('employees')" ng-show="vm.IsEmployee">Employees</a>
         </li>
         <li>
-            <a ng-click="vm.ShowView('products')">Products</a>
+            <a ng-click="vm.ShowView('products')" ng-show="vm.IsEmployee">Products</a>
         </li>
         <li>
             <a ng-click="vm.ShowView('purchases')">Purchases</a>

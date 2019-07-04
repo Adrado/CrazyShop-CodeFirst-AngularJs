@@ -106,7 +106,6 @@
         purchase.ClientId = this.SelectedClient.Id;
         purchase.ProductId = this.SelectedProduct.Id;
 
-
         this.SetData(purchase);
     }
 
