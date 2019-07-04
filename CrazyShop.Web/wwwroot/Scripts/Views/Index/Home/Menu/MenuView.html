@@ -3,21 +3,21 @@
 </style>
 
 <nav id="sidebar" class="" >
-    <div class="sidebar-header" ng-init="vm.ShowView('clients')">
+    <div class="sidebar-header" ng-init="vm.ShowView('purchases')">
         <h2>Menu</h2>
     </div>
     <ul class="list-unstyled components">
         <li>
-            <a ng-click="vm.ShowView('clients')" ng-show="vm.IsEmployee">Clients</a>
-        </li>
-        <li>
-            <a ng-click="vm.ShowView('employees')" ng-show="vm.IsEmployee">Employees</a>
-        </li>
-        <li>
-            <a ng-click="vm.ShowView('products')" ng-show="vm.IsEmployee">Products</a>
-        </li>
-        <li>
             <a ng-click="vm.ShowView('purchases')">Purchases</a>
+        </li>
+        <li>
+            <a ng-click="vm.ShowView('clients')" ng-if="vm.IsEmployee">Clients</a>
+        </li>
+        <li>
+            <a ng-click="vm.ShowView('employees')" ng-if="vm.IsEmployee">Employees</a>
+        </li>
+        <li>
+            <a ng-click="vm.ShowView('products')" ng-if="vm.IsEmployee">Products</a>
         </li>
     </ul>
 </nav>

@@ -19,7 +19,7 @@
     login()
     {
         let loginRequest = new LoginRequest(this.Email, this.Password);
-        this.LoginService.Post(loginRequest)
+        this.LoginService.Login(loginRequest)
             .then((response) =>
             {
                 this.Window.Token = response.data.token;
