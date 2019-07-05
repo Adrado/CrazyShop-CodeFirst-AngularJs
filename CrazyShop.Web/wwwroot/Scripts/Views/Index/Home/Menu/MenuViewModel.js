@@ -29,7 +29,6 @@
         if (this.Window.Token != null)
         {
             let x = this.ParseJwt(this.Window.Token);
-            console.log(x); 
 
             if (x.role == "Employee")
             {

@@ -4,7 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CrazyShop.Lib.DAL;
+using CrazyShop.Lib.Services;
+using CrazyShop.Lib.Services.Interfaces;
 using CrazyShop.Web.Helpers;
+using CrazyShop.Web.Security;
 using CrazyShop.Web.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
@@ -31,14 +34,12 @@ namespace CrazyShop.Web
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddCors();
+            //services.AddCors();
 
-            var connectionString = @"Data Source=E409W10O13\sqlexpress;Initial Catalog=CrazyShop2;Integrated Security=True";
+            //var connectionString = @"Data Source=E409W10O13\sqlexpress;Initial Catalog=CrazyShop2;Integrated Security=True";
 
-            // Register DbContext class
-            services.AddDbContext<CrazyShopDbContext>(options =>
-                options.UseSqlServer(connectionString,
-                b => b.MigrationsAssembly(typeof(Startup).Assembly.FullName)));
+            //// Register DbContext class
+            
 
             // configure strongly typed settings objects
             var appSettingsSection = Configuration.GetSection("AppSettings");
@@ -46,6 +47,11 @@ namespace CrazyShop.Web
 
             // configure jwt authentication
             var appSettings = appSettingsSection.Get<AppSettings>();
+
+            services.AddDbContext<CrazyShopDbContext>(options => options.UseSqlServer(appSettings.DbConnection,
+                b => b.MigrationsAssembly("CrazyShop.Web")));
+
+            InjectDependencies(services);
 
             var key = Encoding.ASCII.GetBytes(appSettings.Secret);
             services.AddAuthentication(x =>
@@ -66,11 +72,14 @@ namespace CrazyShop.Web
                 };
             });
 
-            services.AddScoped<IUserService, UserService>();
-
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 
+        public void InjectDependencies(IServiceCollection services)
+        {
+            services.AddScoped<IRegisterService, RegisterService>();
+            services.AddScoped<ILoginService, JwtLoginService>();
+        }
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
@@ -86,9 +95,11 @@ namespace CrazyShop.Web
 
             app.UseAuthentication();
 
-            app.UseMvc();
+            
             app.UseStaticFiles();
             app.UseDefaultFiles();
+
+            app.UseMvc();
         }
     }
 }

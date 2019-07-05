@@ -1,4 +1,7 @@
-﻿using CrazyShop.Lib.Models;
+﻿using CrazyShop.Lib.DAL;
+using CrazyShop.Lib.Models;
+using CrazyShop.Lib.Services;
+using CrazyShop.Lib.Services.Dtos;
 using CrazyShop.Web.Helpers;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
@@ -9,31 +12,22 @@ using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
-using CrazyShop.Lib.DAL;
 
-namespace CrazyShop.Web.Services
+namespace CrazyShop.Web.Security
 {
-    public interface IUserService
-    {
-        User Authenticate(string username, string password);
-        User GetById(Guid id);
-    }
-
-    public class UserService : IUserService
+    public class JwtLoginService : SimpleLoginService
     {
         private readonly AppSettings _appSettings;
-        private readonly CrazyShopDbContext _context;
-
-        public UserService(IOptions<AppSettings> appSettings, CrazyShopDbContext context)
+        
+        public JwtLoginService(CrazyShopDbContext dbContext, IOptions<AppSettings> appSettings )
+                :base(dbContext)
         {
             _appSettings = appSettings.Value;
-            _context = context;
         }
 
-
-        public User Authenticate(string email, string password)
+        public override User Authenticate(LoginRequest loginRequest)
         {
-            var user = _context.Users.SingleOrDefault(x => x.Email == email && x.Password == password);
+            var user = base.Authenticate(loginRequest);
 
             // return null if user not found
             if (user == null)
@@ -57,17 +51,7 @@ namespace CrazyShop.Web.Services
 
             return user;
         }
-
-        //public IEnumerable<User> GetAll()
-        //{
-        //    // return users without passwords
-        //    return _context.Users;
-        //}
-
-        public User GetById(Guid id)
-        {
-            var user = _context.Users.FirstOrDefault(x => x.Id == id);
-            return user;
-        }
     }
+
+    
 }
