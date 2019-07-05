@@ -46,7 +46,7 @@ namespace CrazyShop.Web.Controllers
 
         // PUT: api/Products/5
         [HttpPut("{id}")]
-        [Authorize(Roles = Roles.Employee)]
+        [Authorize]
         public async Task<IActionResult> PutProduct(Guid id, Product product)
         {
             if (id != product.Id)
