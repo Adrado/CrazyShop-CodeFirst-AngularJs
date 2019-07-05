@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using CrazyShop.Lib.DAL;
 using CrazyShop.Lib.Models;
 using Microsoft.AspNetCore.Authorization;
+using CrazyShop.Web.Security;
 
 namespace CrazyShop.Web.Controllers
 {
@@ -45,7 +46,7 @@ namespace CrazyShop.Web.Controllers
 
         // PUT: api/Clients/5
         [HttpPut("{id}")]
-        [Authorize(Roles = "Employee")]
+        [Authorize(Roles = Roles.Employee)]
         public async Task<IActionResult> PutClient(Guid id, Client client)
         {
             if (id != client.Id)
@@ -76,7 +77,7 @@ namespace CrazyShop.Web.Controllers
 
         // POST: api/Clients
         [HttpPost]
-        [Authorize(Roles = "Employee")]
+        [Authorize(Roles = Roles.Employee)]
         public async Task<ActionResult<Client>> PostClient(Client client)
         {
             _context.Clients.Add(client);
@@ -87,7 +88,7 @@ namespace CrazyShop.Web.Controllers
 
         // DELETE: api/Clients/5
         [HttpDelete("{id}")]
-        [Authorize(Roles = "Employee")]
+        [Authorize(Roles = Roles.Employee)]
         public async Task<ActionResult<Client>> DeleteClient(Guid id)
         {
             var client = await _context.Clients.FindAsync(id);

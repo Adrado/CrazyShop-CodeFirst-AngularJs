@@ -9,6 +9,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using CrazyShop.Lib.DAL;
 using CrazyShop.Lib.Models;
+using CrazyShop.Lib.Services;
+using CrazyShop.Lib.Services.Dtos;
 
 namespace CrazyShop.Web.Controllers
 {
@@ -16,30 +18,21 @@ namespace CrazyShop.Web.Controllers
     [ApiController]
     public class LoginController : ControllerBase
     {
-        IUserService UsersService { get; set; }
+        ILoginService _loginService { get; set; }
 
-        public LoginController(IUserService usersService)
+        public LoginController(ILoginService loginService)
         {
-            UsersService = usersService;
-        }
-
-        // GET api/values
-        [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
-        {
-            return new string[] { "value1", "value2" };
+            _loginService = loginService;
         }
 
         // POST: api/Login
         [HttpPost]
-        public IActionResult Post([FromBody] LoginRequest request)
+        public async Task<User> Post([FromBody] LoginRequest loginRequest)
         {
-            var user = UsersService.Authenticate(request.Email, request.Password);
-
-            if (user == null)
-                return BadRequest(new { message = "Username or password is incorrect" });
-
-            return Ok(user);
+            return await Task.Run(() =>
+            {
+                return _loginService.Authenticate(loginRequest);
+            });
         }
     }
 }

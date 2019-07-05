@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Text;
 
-namespace CrazyShop.Web.Security
+namespace CrazyShop.Lib.Services.Dtos
 {
-    public class LoginRequest
+    public class RegisterRequest
     {
         public string Email { get; set; }
         public string Password { get; set; }
