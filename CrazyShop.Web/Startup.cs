@@ -34,7 +34,7 @@ namespace CrazyShop.Web
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            //services.AddCors();
+            services.AddCors();
 
             //var connectionString = @"Data Source=E409W10O13\sqlexpress;Initial Catalog=CrazyShop2;Integrated Security=True";
 

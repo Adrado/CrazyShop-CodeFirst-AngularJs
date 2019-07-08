@@ -38,6 +38,7 @@
 
 
 <div>
-    <start class="MainContainer" ng-show="!vm.IsLogon"></start>
-    <home ng-show="vm.IsLogon"></home>
+    <start class="MainContainer" ng-if="vm.IsStartVisible()"></start>
+    <home ng-if="vm.IsLogon()"></home>
+    <loading ng-if="vm.IsLoading()"></loading>
 </div>

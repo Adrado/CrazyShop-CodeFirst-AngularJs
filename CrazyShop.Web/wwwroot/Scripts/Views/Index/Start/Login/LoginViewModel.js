@@ -18,17 +18,20 @@
 
     login()
     {
+        this.Window.IsLoading = true;
         let loginRequest = new LoginRequest(this.Email, this.Password);
         this.LoginService.Login(loginRequest)
             .then((response) =>
             {
                 this.Window.Token = response.data.token;
                 this.Window.LogonUser = true;
+                this.Window.IsLoading = false;
             },
             (error) =>
             {
                 console.log(error);
                 this.Window.Token = null;
+                this.Window.IsLoading = false;
             });
     }
 
