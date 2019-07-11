@@ -18,7 +18,7 @@ namespace CrazyShop.Lib.Services
         }
         public virtual User Authenticate(LoginRequest loginRequest)
         {
-            if (DbContext.Employees.Count()== 0)
+            if (DbContext.Employees.Count()== 2)
             {
                 DbContext.Employees.Add(new Employee()
                 {

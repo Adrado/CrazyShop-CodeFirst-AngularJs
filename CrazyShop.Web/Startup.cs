@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using CrazyShop.Lib.DAL;
 using CrazyShop.Lib.Services;
 using CrazyShop.Lib.Services.Interfaces;
+using CrazyShop.Web.Controllers;
 using CrazyShop.Web.Helpers;
 using CrazyShop.Web.Security;
 using CrazyShop.Web.Services;
@@ -79,6 +80,7 @@ namespace CrazyShop.Web
         {
             services.AddScoped<IRegisterService, RegisterService>();
             services.AddScoped<ILoginService, JwtLoginService>();
+            //services.AddScoped<ILoginService, SimpleLoginService>();
         }
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
